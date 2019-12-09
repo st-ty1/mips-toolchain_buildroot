@@ -1,37 +1,30 @@
 #!/bin/bash
 
-PATH="/home/stephan/freshtomato-mips/tools/brcm/hndtools-mipsel-linux/bin:$PATH"
-PATH="/home/stephan/freshtomato-mips/tools/brcm/hndtools-mipsel-uclibc/bin:$PATH"
+PATH="/home/<username>/freshtomato-mips/tools/brcm/hndtools-mipsel-linux/bin:$PATH"
+PATH="/home/<username>/freshtomato-mips/tools/brcm/hndtools-mipsel-uclibc/bin:$PATH"
+
 ##############################
 ## clean and reset FT sources
 ##############################
 cd $HOME/freshtomato-mips 
 git clean -dxf 
 git reset --hard
-
-#RT-Images:
-#git checkout mips-master
-
-#RT-N and RT-AC-images:
 git checkout mips-RT-AC
 
-
-GCCVER=4.2.4
-ROOTDIR=$PWD  ## aktuell $HOME/buildroot-2011.2
 ################################
 ## build mipsel-toolchain
 ################################
-#cd $HOME/buildroot-2011.02
-#make clean
-#make
+cd $HOME/buildroot-2011.02
+make clean
+make
 
 #################################
 ## create missing links
 ################################
 cd $HOME/buildroot-2011.02/output/host/usr/bin
-ln -nsf mipsel-linux-uclibc-gcc-${GCCVER} mipsel-linux-uclibc-gcc
-ln -nsf mipsel-linux-uclibc-gcc-${GCCVER} mipsel-linux-gcc-${GCCVER}
-ln -nsf mipsel-linux-uclibc-gcc-${GCCVER} mipsel-uclibc-gcc-${GCCVER}
+ln -nsf mipsel-linux-uclibc-gcc-4.2.4 mipsel-linux-uclibc-gcc
+ln -nsf mipsel-linux-uclibc-gcc-4.2.4 mipsel-linux-gcc-4.2.4
+ln -nsf mipsel-linux-uclibc-gcc-4.2.4 mipsel-uclibc-gcc-4.2.4
 
 ln -nsf mipsel-linux-gcc mipsel-linux-cc
 ln -nsf mipsel-linux-uclibc-g++ mipsel-uclibc-g++
@@ -63,10 +56,10 @@ rm -f hndtools-mipsel-uclibc
 ## install new toolchain
 #####################################
 
-cp -rf $HOME/buildroot-2011.02/output/host/usr K26/hndtools-mipsel-uclibc-${GCCVER}
+cp -rf $HOME/buildroot-2011.02/output/host/usr K26/hndtools-mipsel-uclibc-4.2.4
 
-ln -nsf K26/hndtools-mipsel-uclibc-${GCCVER} hndtools-mipsel-linux
-ln -nsf K26/hndtools-mipsel-uclibc-${GCCVER} hndtools-mipsel-uclibc
+ln -nsf K26/hndtools-mipsel-uclibc-4.2.4 hndtools-mipsel-linux
+ln -nsf K26/hndtools-mipsel-uclibc-4.2.4 hndtools-mipsel-uclibc
 
 #####################################
 ## patch FT sources and build FT
@@ -79,27 +72,11 @@ patch -i $HOME/Dokumente/freshtomato-mips/Makefile.linux.patch $HOME/freshtomato
 patch -i $HOME/Dokumente/freshtomato-mips/genconfig.sh.patch $HOME/freshtomato-mips/release/src/router/miniupnpd/genconfig.sh
 rm -f /home/stephan/freshtomato-mips/release/src/router/nettle/desdata.stamp
 
-
-## RT-AC-Image + RT-N-Image
 patch -i $HOME/Dokumente/freshtomato-mips/Makefile_RT-AC.patch $HOME/freshtomato-mips/release/src/router/Makefile
 
-## RT-AC-Image 
 cd release/src-rt-6.x
 patch -i $HOME/Dokumente/freshtomato-mips/mksquashfs.c.patch $HOME/freshtomato-mips/release/src-rt-6.x/linux/linux-2.6/scripts/squashfs/mksquashfs.c
-make wndr4500v2z ## > build.txt; AIO: z; VPN: e
-
-## RT-N-Image
-#cd release/src-rt
-#patch -i $HOME/Dokumente/freshtomato-mips/mksquashfs.c.patch $HOME/freshtomato-mips/release/src-rt/linux/linux-2.6/scripts/squashfs/mksquashfs.c 
-#read -p "weiter mit Enter"
-#make n64z ## > build.txt; AIO: z; VPN: e; 
-
-## RT-Image
-#patch -i $HOME/Dokumente/freshtomato-mips/Makefile_master.patch $HOME/freshtomato-mips/release/src/router/Makefile
-#patch -i $HOME/Dokumente/freshtomato-mips/mksquashfs.c.patch $HOME/freshtomato-mips/release/src-rt/linux/linux-2.6/scripts/squashfs/mksquashfs.c
-#read -p "weiter mit Enter"
-#cd release/src-rt 
-#make r2z ## > build.txt; AIO: z; VPN: e; 
+make wndr4500v2z
 
 
 

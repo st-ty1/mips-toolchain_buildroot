@@ -226,6 +226,7 @@ $(GCC_BUILD_DIR1)/.configured: $(GCC_DIR)/.patched
 		--without-headers \
 		--with-newlib \
 		--disable-multilib \
+		--enable-tls \
 		$(GCC_TLS) \
 		$(GCC_WITH_HOST_GMP) \
 		$(GCC_WITH_HOST_MPFR) \
@@ -295,6 +296,7 @@ $(GCC_BUILD_DIR2)/.configured: $(GCC_DIR)/.patched
 		--enable-shared \
 		--disable-libssp \
 		--disable-multilib \
+		--enable-tls \
 		$(GCC_TLS) \
 		$(GCC_WITH_HOST_GMP) \
 		$(GCC_WITH_HOST_MPFR) \
@@ -376,6 +378,7 @@ $(GCC_BUILD_DIR3)/.configured: $(GCC_SRC_DIR)/.patched $(GCC_STAGING_PREREQ)
 		--with-gnu-ld \
 		--disable-libssp \
 		--disable-multilib \
+		--enable-tls \
 		$(GCC_TLS) \
 		$(GCC_SHARED_LIBGCC) \
 		$(GCC_WITH_HOST_GMP) \

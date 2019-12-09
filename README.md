@@ -15,3 +15,5 @@ This is an alternate way of building the mipos-toolchain (used in FreshTomato)
   (Remember to restore old softlink to gcc-9.2 after finish building toolchain!) 
 - Now modification of some buildroot files are also needed (mods are listed in needed_modifications.txt; please read this file first, as it contains the loaction of the files within buildroot directory). Replace original files in your buildroot folder by modded files of this repo. The flie "config" has to be renamed to ".config".
 - Start building process within buildroot folder with make (more information in buildroot/documentation folder).
+- Shell script build26_mod.sh shows how building of mips-toolchain and afterwards building of FT itself can be combined, here as an
+  example by genearting an RT-AC-image (wndr4500z). 

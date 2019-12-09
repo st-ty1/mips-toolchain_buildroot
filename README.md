@@ -13,5 +13,5 @@ This is an alternate way of building the mipos-toolchain (used in FreshTomato)
   With gcc-4.9 (available in AUR-repo) building process works. So you have to install gcc-4.9 before building mips-toolchain.
   After installing gcc-4.9, replace softlink of gcc-9.2 to gcc in /usr/bin by softlink of gcc-4.9 to gcc.
   (Remember to restore old softlink to gcc-9.2 after finish building toolchain!) 
-- Now modification of some buildroot files are also needed (mods are listed in needed_modifications.txt). Replace original files in your buildroot folder by modded files of this repo. 
+- Now modification of some buildroot files are also needed (mods are listed in needed_modifications.txt; please read this file first, as it contains the loaction of the files within buildroot directory). Replace original files in your buildroot folder by modded files of this repo. The flie "config" has to be renamed to ".config".
 - Start building process within buildroot folder with make (more information in buildroot/documentation folder).

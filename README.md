@@ -13,7 +13,7 @@ This is an alternate way of building the mipos-toolchain (used in FreshTomato)
   With gcc-4.9 (available in AUR-repo) building process works. So you have to install gcc-4.9 before building mips-toolchain.
   After installing gcc-4.9, replace softlink of gcc-9.2 to gcc in /usr/bin by softlink of gcc-4.9 to gcc.
   (Remember to restore old softlink to gcc-9.2 after finish building toolchain!) 
-- Now, modifications of some buildroot files are also needed (mods are listed detailed in needed_modifications.txt; please read this file first, as it contains the loaction of the files within buildroot directory). Replace original files in your buildroot folder by modded files of this repo. The flie "config" has to be renamed to ".config".
+- Now, modifications of some buildroot files are also needed. The mods are listed detailed in needed_modifications.txt. Please read this file first, as it contains the location of the files within buildroot directory. Replace original files in your buildroot folder by modded files of this repo. The file "config" has to be renamed to ".config".
 - Start building process within buildroot folder with make (more information in buildroot/documentation folder).
-- The shell script build26_mod.sh shows, how the building process of mips-toolchain and afterwards the  building process of FT itself can be combined, here for
-example by generating an RT-AC-image (wndr4500z). 
+- The shell script build26_mod.sh demonstrates, how the building process of mips-toolchain and afterwards the building process of FT itself can be combined, here for
+example by generating the AIO-image of Netgear WNDR4500. 

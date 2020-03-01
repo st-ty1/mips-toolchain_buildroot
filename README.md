@@ -1,7 +1,6 @@
-Building of mipsel-toolchain with buildroot vers.2011.02 (tested only with Artix/Arch Linux; not tested with Debian/Ubuntu, newer versions of them will most likely not work))
+Building of mipsel-toolchain with buildroot vers. 2011.02 (tested only with Artix/Arch Linux; not tested with Debian/Ubuntu, newer versions of them will most likely not work.)
 
-This is an alternate way of building the mipo
-s-toolchain (used in FreshTomato)
+This is an alternate way of building the mipsel-toolchain (used in FreshTomato and asuswrt-Merlin/John's fork, in both repos the build process of toolchain don't work anymore.)
 
 - Download buildroot-2011.02 from https://buildroot.org/downloads/buildroot-2011.02.tar.gz
 - Extract sources into new folder in your home directory (e.g. /home/<username>/buildroot-2011.02)

@@ -46,12 +46,10 @@
 		MAKEINFO=missing
     (integrate in all of 3 building stages of gcc)
 
-4.c Take over all C- and C++-options of gcc from FT-toolchain (but without -fhonour-copts!, "unknown option"); they have to be integrated as options in "make" command
-     in all of the 3 stages of gcc (gcc-4.2.4-initial, gcc-4.2.4-intermediate und gcc-4.2.4-final): 
-	CFLAGS_FOR_TARGET="-Os -pipe -mips32 -mtune=mips32 -funit-at-a-time" \
+4.c Use all C- and C++-options of gcc of FT-toolchain (but without -fhonour-copts!, -> error:  "unknown option"); they have to be integrated as options in "make" command in all of the 3 stages of gcc (gcc-4.2.4-initial, gcc-4.2.4-intermediate und gcc-4.2.4-final): 
+	CFLAGS_FOR_TARGET="-Os -std=gnu89 -fgnu89-inline -pipe -mips32 -mtune=mips32 -funit-at-a-time" \
 	CXXFLAGS_FOR_TARGET="-Os -pipe -mips32 -mtune=mips32 -funit-at-a-time" 
-    Include also "-std=gnu99" od. "-std=c99" as further make option.
-	
+ 	
 4.d gcc of original FT-toolchain uses tls, so add additional configure option to all of 3 building stages of gcc:
 		--enable-tls
 

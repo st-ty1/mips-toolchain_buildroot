@@ -1,4 +1,4 @@
-Building of mipsel-uClibc-toolchain with buildroot vers. 2011.02 (tested only on Artix/Arch Linux; not tested on Debian/Ubuntu, newer versions of them will most likely not work.)
+Building of mipsel-uClibc-toolchain with buildroot vers. 2011.02 (tested only on Artix/Arch Linux; not tested on Debian/Ubuntu, but should also work)
 
 This is an alternate way of building the mipsel-uClibc-toolchain (used in FreshTomato and asuswrt-Merlin/John's fork, in both repos the build process of toolchain don't work anymore.)
 

@@ -1,6 +1,6 @@
 Building of mipsel-uClibc-toolchain with buildroot vers. 2011.02 (tested only on Artix/Arch Linux; not tested on Debian/Ubuntu, but should also work)
 
-This is an alternate way of building the mipsel-uClibc-toolchain (used in FreshTomato and asuswrt-Merlin/John's fork, in both repos the build process of toolchain don't work anymore.)
+This is an alternate way of building the mipsel-uClibc-toolchain (used in FreshTomato and asuswrt-Merlin/John's fork, in both repos the build process of their toolchain breaks. Their building code is way too old. A far more update version is available under https://github.com/wl500g/toolchain, but the toolchain generation process there still needs some patches listed here, too.)
 
 - Download buildroot-2011.02 from https://buildroot.org/downloads/buildroot-2011.02.tar.gz
 - Extract sources into new folder in your home directory (e.g. /home/<username>/buildroot-2011.02)

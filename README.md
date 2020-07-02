@@ -16,5 +16,6 @@ This is an alternate way of building the mipsel-uClibc-toolchain (used in FreshT
   - Please read this file first, as it contains the location of the files within buildroot directory. 
   - Replace original files (.config, Makefile.in, gcc-uclibc-4.x.mk, kernel-headers.mk, uClibc-0.9.30.config and uclibc.mk) in your buildroot folder by the modded files of this repo. 
 - Copy 1030_gcc_inline_functions.patch of this repo to buildroot-2011.02/toolchain/gcc/4.2.4 .
+- Copy 020-fcommon-gcc10-binutils.patch to buildroot-2011.02/package/binutils/binutils-2.20.1 and buildroot-2011.02/package/binutils/binutils-2.19.1.
 - Start building process within buildroot folder with make (more information in buildroot/documentation folder).
 - The shell script build26_mod.sh demonstrates, how the building process of mips-toolchain and afterwards the building process of FT itself can be combined, here for example by generating the AIO-image of Netgear WNDR4500. 
